@@ -9,11 +9,12 @@ function App() {
  ])
  const [ open, setOpen] = useState(false)
  const upcomingPosts = posts.filter(post => new Date(post.time) <= Date.now())
+ const sheduledPost = posts.filter(post => new Date(post.time) >= Date.now())
 
  console.log(posts);
   return (
     <>
-    
+    <p>{Date.now().}</p>
     <div className='flex justify-end pt-20 pe-20'>
     <button className='text-green-400 bg-red-600 p-2 rounded-xl  ' onClick={() => setOpen(true)}>
           Add Post
@@ -23,7 +24,7 @@ function App() {
       <h1 className='text-center text-3xl'>All Posts</h1>
 
     <div className=' grid grid-cols-4 gap-4 mx-10'>
-        {posts && posts.map((post, index) => {
+        {sheduledPost && sheduledPost.map((post, index) => {
           return <div className='p-5 rounded-lg shadow-lg ' key={index}>
             <h1>{post.name}</h1>
             <img src={post.ImgLink} alt="no image" className=' h-fit rounded-lg ' />
