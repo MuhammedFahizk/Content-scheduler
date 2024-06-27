@@ -14,7 +14,6 @@ function App() {
  console.log(posts);
   return (
     <>
-    <p>{Date.now().}</p>
     <div className='flex justify-end pt-20 pe-20'>
     <button className='text-green-400 bg-red-600 p-2 rounded-xl  ' onClick={() => setOpen(true)}>
           Add Post
